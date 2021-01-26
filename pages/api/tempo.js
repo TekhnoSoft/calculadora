@@ -7,17 +7,31 @@ async function tempo(request, response) {
   const subscribersResponse = await fetch(uri);
 
   const subscribersResponseJson = await subscribersResponse.json();
+  const cep = subscribersResponseJson.cep;
+  const logradouro = subscribersResponseJson.logradouro;
+  const complemento = subscribersResponseJson.complemento;
   const bairro = subscribersResponseJson.bairro;
-  const rua = subscribersResponseJson.rua;
+  const localidade = subscribersResponseJson.localidade;
   const uf = subscribersResponseJson.uf;
+  const ibge = subscribersResponseJson.ibge;
+  const gia = subscribersResponseJson.gia;
+  const ddd = subscribersResponseJson.ddd;
+  const siafi = subscribersResponseJson.siafi;
 
   response.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate");
 
   response.json({
     date: dynamicDate.toGMTString(),
+    cep: cep,
+    logradouro: logradouro,
+    complemento: complemento,
     bairro: bairro,
-    rua: rua,
+    localidade: localidade,
     uf: uf,
+    ibge: ibge,
+    gia: gia,
+    ddd: ddd,
+    siafi: siafi,
   });
 }
 
