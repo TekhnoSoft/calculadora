@@ -1,8 +1,12 @@
+import Link from "next/link";
+
 function Home() {
   return (
     <div>
-      <h1>Home Calculadora</h1>
-      <a href="/sobre">Acessar página Principal</a>
+      <h1>Home</h1>
+      <Link href="/sobre">
+        <a>Acessar página Sobre</a>
+      </Link>
     </div>
   );
 }

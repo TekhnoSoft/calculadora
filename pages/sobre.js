@@ -1,8 +1,12 @@
-function Sobre {
-     return (
+import Link from "next/link";
+
+function Sobre() {
+  return (
     <div>
-      <h1>Home Calculadora</h1>
-      <a href="/">Acessar página Principal</a>
+      <h1>Sobre</h1>
+      <Link href="/">
+        <a>Acessar página Principal</a>
+      </Link>
     </div>
   );
 }
